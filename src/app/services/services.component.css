@@ -1,0 +1,103 @@
+/* ✅ Contenedor principal */
+.services {
+    padding: 80px 40px;
+    background-image: url('/assets/Piscina.jpg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* ✅ Estilo del título */
+.services-title {
+    background-color: rgba(230, 0, 126, 0.9);
+    color: white;
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Lista de servicios */
+.service-list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* ✅ Contenedor individual de cada servicio */
+.service {
+    width: 320px;
+    text-align: center;
+}
+
+/* ✅ Icono del servicio */
+.service-icon {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon i {
+    font-size: 56px; /* Aumentamos el tamaño del icono */
+    color: #ed008c;
+}
+
+/* ✅ Título del servicio */
+.service h3 {
+    font-size: 24px; /* Aumentamos el tamaño del título */
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ✅ Descripción del servicio */
+.service p {
+    font-size: 18px; /* Aumentamos el tamaño del texto */
+    text-align: justify;
+    color: white;
+}
+
+/* ✅ Diseño responsive */
+@media (max-width: 768px) {
+    .service-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service {
+        width: 100%;
+    }
+
+    .service-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .service-icon i {
+        font-size: 42px;
+    }
+
+    .services-title {
+        font-size: 28px;
+        padding: 16px 32px;
+    }
+
+    .service h3 {
+        font-size: 22px;
+    }
+
+    .service p {
+        font-size: 16px;
+    }
+}

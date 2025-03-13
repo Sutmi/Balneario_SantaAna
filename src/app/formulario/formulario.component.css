@@ -1,0 +1,178 @@
+/* Fondo general con degradado */
+body {
+  background: linear-gradient(to bottom, #FFFFFF, #8BC7E1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+  position: relative;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #757575;
+  cursor: pointer;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 18px;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.close-button:hover {
+  color: #1a237e;
+}
+
+/* Título y descripción */
+.title {
+  font-size: 28px;
+  color: #1a237e;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 14px;
+  color: #757575;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: block;
+  width: 100%;
+}
+
+span {
+  display: block;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+/* Placeholder de input */
+.input::placeholder {
+  color: #b0b0b0;
+}
+
+/* Cuando el input está enfocado */
+.input:focus {
+  border-color: #9E96F2;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Input inválido */
+.input.ng-touched.ng-invalid {
+  border-color: #e53935;
+}
+
+/* Botón de acción */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit {
+  background: linear-gradient(to right, #9E96F2, #EC31F0);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+
+/* Efecto hover */
+.submit:hover:enabled {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Input inválido */
+.input.ng-touched.ng-invalid {
+  border-color: #e53935;
+}
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #757575;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+

@@ -1,0 +1,72 @@
+<div class="container" id="form-section">
+  <button class="close-button">✕</button>
+  <p class="title">RESERVACIONES</p>
+  <p class="description">
+    Complete el siguiente formulario para realizar una reservación.<br>
+    Por favor agregue todos los detalles requeridos.
+  </p>
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <p class="subtitle">Detalles de Contacto</p>
+    <p class="message">Por favor complete sus datos para que podamos comunicarnos con usted.</p>
+    <br>
+    <!-- Nombre -->
+    <div class="flex">
+      <label>
+        <span>Nombre</span>
+        <input 
+          type="text" 
+          formControlName="name" 
+          class="input" 
+          placeholder="Tu nombre"
+          (keypress)="preventNumbers($event)" 
+        />
+        <small *ngIf="isInvalidField('name')" class="error-message">
+          {{ getErrorMessage('name') }}
+        </small>
+      </label>
+    </div>
+
+    <!-- Número de Teléfono -->
+    <div class="flex">
+      <label>
+        <span>Número Telefónico</span>
+        <input 
+          type="tel" 
+          formControlName="phone" 
+          class="input" 
+          placeholder="(123) 456 - 7890"
+          (keypress)="allowOnlyNumbers($event)" 
+          maxlength="10"
+        />
+        <small *ngIf="isInvalidField('phone')" class="error-message">
+          {{ getErrorMessage('phone') }}
+        </small>
+      </label>
+    </div>
+
+    <!-- Correo -->
+    <div class="flex">
+      <label>
+        <span>Correo</span>
+        <input 
+          type="email" 
+          formControlName="email" 
+          class="input" 
+          placeholder="Su ID de correo"
+        />
+        <small *ngIf="isInvalidField('email')" class="error-message">
+          {{ getErrorMessage('email') }}
+        </small>
+      </label>
+    </div>
+
+    <!-- Botón de envío -->
+    <div class="button-container">
+      <button type="submit" class="submit back-button" [disabled]="submitButtonDisabled">
+        Siguiente
+      </button>
+    </div>
+  </form>
+</div>

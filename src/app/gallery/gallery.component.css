@@ -1,0 +1,141 @@
+/* ✅ Fondo transparente (azul) encima de la imagen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 58, 140, 0.20); /* opacidad*/
+    z-index: 5; 
+    
+}
+
+/* ✅ Contenedor Principal */
+.gallery {
+    position: relative;
+    padding: 80px 20px;
+    background-image: url('/assets/personas2.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    width: auto;
+    height: auto;
+}
+
+/* ✅ Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20; /* ✅ El logo estará encima del fondo */
+}
+
+.logo img {
+    width: 300px;
+    height: auto;
+}
+
+/* ✅ Título (Galería) */
+.gallery-title {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(90deg, 
+        #ffffff7d 0%, 
+        #EDEDED 44%, 
+        #00BDF1 100%); /* ✅ Degradado aplicado */
+    padding: 20px 40px;
+    width: 400px; /* ✅ Ancho aumentado para que sea más alargado */
+    border-radius: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center; /* ✅ Centrado del texto */
+    z-index: 20; /* ✅ El título estará por encima del fondo */
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+
+/* ✅ Carrusel */
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 1300px;
+    margin: 120px auto 40px;
+    z-index: 10;
+}
+
+.carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+/* ✅ Elemento de cada imagen */
+.carousel-item {
+    min-width: 280px;
+    height: 360px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ✅ Efecto hover (ampliación) */
+.carousel-item:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #ffffff;
+}
+
+/* ✅ Diseño responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 180px;
+        height: 240px;
+    }
+
+    .gallery-title {
+        font-size: 18px;
+        padding: 10px 24px;
+        right: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}

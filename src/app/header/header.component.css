@@ -1,0 +1,29 @@
+.nav-bar {
+    
+    display: flex;
+    padding: 10px 20px;
+  }
+  
+  .nav-item {
+    color: #fff; /* Color de texto */
+    font-size: 16px;
+    text-transform: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .nav-item:hover {
+    background-color: rgba(54, 54, 54, 0.1);
+    color: #F6C712; /* Color amarillo al hacer hover */
+    border-radius: 20px;
+    
+  }
+  
+
+  
+  .nav-item:not(:last-child) {
+    margin-right: 10px;
+  }
+  

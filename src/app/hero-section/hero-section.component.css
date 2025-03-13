@@ -1,0 +1,105 @@
+/* ✅ Contenedor Principal */
+.hero {
+  position: relative;
+  background-image: url('/assets/Fondo.jpg');
+
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ✅ Logo */
+.logo {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+/* ✅ Texto de Descripción */
+.description {
+  background-color: #e620b9;
+  padding: 12px 24px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* ✅ Botón de Reserva */
+.reserve-btn {
+  border: 3px solid #ffdb4d; /* ✅ Borde color amarillo */
+  background-color: #ffffff44;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background-color: #ffdb4d;
+  color: #000;
+  border-color: #ffd700; /* ✅ Borde ligeramente más oscuro al hacer hover */
+}
+
+
+.reserve-btn:hover {
+  background-color: #ffdb4d;
+}
+
+
+/* ✅ Bot */
+.bot {
+  width: 250px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ✅ Animación para el Bot */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* ✅ Responsivo */
+@media (max-width: 768px) {
+  .hero {
+      height: 100vh;
+  }
+
+  .logo {
+      width: 220px;
+  }
+
+  .description {
+      font-size: 16px;
+  }
+
+  .reserve-btn {
+      font-size: 16px;
+  }
+
+  .bot {
+      width: 80px;
+      bottom: 10px;
+      right: 10px;
+  }
+  
+}
