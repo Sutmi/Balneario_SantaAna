@@ -17,15 +17,15 @@ app.post('/enviar-correo', async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail', // Servicio de correo: Gmail
     auth: { 
-      user: 'sut.dst@gmail.com', // Correo del remitente
-      pass: 'jxka gofj iaaf xgqs' // Contraseña de aplicación de Gmail
+      user: 'tu_correo@gmail.com', // Correo del remitente
+      pass: 'tu_contraseña' // Contraseña de aplicación de Gmail
     }
   });
 
   // Contenido y configuración del correo
   const mailOptions = {
     from: 'tu_correo@gmail.com', // Remitente (puede ser el mismo que el de auth)
-    to: 'sut.dst@gmail.com',  // Destinatario
+    to: 'tu_correo@gmail.com',  // Destinatario
     subject: 'Nueva reservación',// Asunto del correo
     // Cuerpo del mensaje en formato HTML
     html: `
