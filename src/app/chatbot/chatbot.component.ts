@@ -63,18 +63,33 @@ export class ChatbotComponent implements OnInit {
       return;
     }
   
-    // Scraping de info real del balneario
-    if (
-      lower.includes('precios') ||
-      lower.includes('cabaña') ||
-      lower.includes('comida') ||
-      lower.includes('clima') ||
-      lower.includes('entrada')
-    ) {
+const keywords = [
+  'precio', 'entrada', 'tarifa', 'cuánto cuesta',
+  'horario', 'hora de apertura',
+  'cabaña', 'cabañas',
+  'servicio', 'servicios', 'actividades', 'qué ofrecen',
+  'comida', 'llevar', 'condiciones',
+  'restaurantes', 'venden',
+  'wifi', 'señal',
+  'plan familiar', 'promoción',
+  'locker',
+  'transporte', 'cómo llegar',
+  'tienda', 'tiendas',
+  'hotel', 'habitacion', 'habitaciones',
+  'camping', 'campamento',
+  'mascotas', 'pet friendly', 'animales'
+];
 
-    }
-  
-    
+if (keywords.some(kw => lower.includes(kw))) {
+  this.chatbotService.getMessageFromGPT(message).then(response => {
+    this.messages.push({ content: response, type: 'bot' });
+    this.isLoading = false;
+  }).catch(() => {
+    this.messages.push({ content: 'Lo siento, no pude responder a tu pregunta.', type: 'bot' });
+    this.isLoading = false;
+  });
+  return;
+}
   }
   
 // Reconocimiento de voz
