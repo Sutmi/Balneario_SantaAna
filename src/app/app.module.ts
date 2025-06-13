@@ -16,6 +16,9 @@ import { GraciasComponent } from './gracias/gracias.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { FormsModule } from '@angular/forms';
     GalleryComponent,
     ReactiveFormsModule,
     FormsModule,
-    ChatbotComponent
+    ChatbotComponent,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAnalyticsModule
 ],
   providers: [
     provideClientHydration(withEventReplay())
