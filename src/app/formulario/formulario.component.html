@@ -1,72 +1,154 @@
-<div class="container" id="form-section">
-  <button class="close-button">✕</button>
-  <p class="title">RESERVACIONES</p>
-  <p class="description">
-    Complete el siguiente formulario para realizar una reservación.<br>
+<!-- Primera parte del formulario de reservación -->
+<div class="container-form" id="form-section" *ngIf="form && showForm1" [formGroup]="form">
+  <!-- Botón para cerrar el formulario -->
+  <button class="close-btn" (click)="closeAndRedirect()">&#10006;</button>
+
+  <!-- Título y descripción -->
+  <p class="title-form">RESERVACIONES</p>
+  <p class="description-form">
+    Complete el siguiente formulario para realizar 
+    <br>
+    una reservación.
+    <br>
     Por favor agregue todos los detalles requeridos.
   </p>
 
+  <!-- Sección de formulario con campos reactivos -->
+  <div [formGroup]="form" class="form">
+    
+    <!-- Encabezado de la sección de contacto -->
+    <div class="contact-section">
+      <p class="subtitle">Detalles de Contacto</p>
+      <p class="message">Por favor complete sus datos para que podamos comunicarnos con usted.</p>
+    </div>
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-    <p class="subtitle">Detalles de Contacto</p>
-    <p class="message">Por favor complete sus datos para que podamos comunicarnos con usted.</p>
-    <br>
-    <!-- Nombre -->
+    <!-- Campo: Nombre -->
     <div class="flex">
       <label>
         <span>Nombre</span>
-        <input 
-          type="text" 
-          formControlName="name" 
-          class="input" 
-          placeholder="Tu nombre"
-          (keypress)="preventNumbers($event)" 
-        />
-        <small *ngIf="isInvalidField('name')" class="error-message">
-          {{ getErrorMessage('name') }}
-        </small>
+        <input type="text" formControlName="name" class="input" placeholder="Tu nombre" (keypress)="preventNumbers($event)" />
+        <small *ngIf="isInvalidField('name')" class="error-message">{{ getErrorMessage('name') }}</small>
       </label>
     </div>
 
-    <!-- Número de Teléfono -->
+    <!-- Campo: Teléfono -->
     <div class="flex">
       <label>
         <span>Número Telefónico</span>
-        <input 
-          type="tel" 
-          formControlName="phone" 
-          class="input" 
-          placeholder="(123) 456 - 7890"
-          (keypress)="allowOnlyNumbers($event)" 
-          maxlength="10"
-        />
-        <small *ngIf="isInvalidField('phone')" class="error-message">
-          {{ getErrorMessage('phone') }}
-        </small>
+        <input type="tel" formControlName="phone" class="input" placeholder="(123) 456 - 7890" (keypress)="allowOnlyNumbers($event)" maxlength="10" />
+        <small *ngIf="isInvalidField('phone')" class="error-message">{{ getErrorMessage('phone') }}</small>
       </label>
     </div>
 
-    <!-- Correo -->
+    <!-- Campo: Correo -->
     <div class="flex">
       <label>
         <span>Correo</span>
-        <input 
-          type="email" 
-          formControlName="email" 
-          class="input" 
-          placeholder="Su ID de correo"
-        />
-        <small *ngIf="isInvalidField('email')" class="error-message">
-          {{ getErrorMessage('email') }}
-        </small>
+        <input type="email" formControlName="email" class="input" placeholder="Su ID de correo" />
+        <small *ngIf="isInvalidField('email')" class="error-message">{{ getErrorMessage('email') }}</small>
+      </label>
+    </div>
+  </div>
+
+  <!-- Botón para continuar a la segunda parte del formulario -->
+  <div class="button-wrapper">
+    <button type="button" class="submit-form" (click)="goToNextForm()">Siguiente</button>
+  </div>
+</div>
+
+<!-- Segunda parte del formulario de reservación -->
+<div class="container-form" *ngIf="form && showForm2" [formGroup]="form">
+  <!-- Botón para cerrar el formulario -->
+  <button class="close-btn" (click)="closeAndRedirect()">&#10006;</button>
+
+  <!-- Título y descripción -->
+  <p class="title-form">RESERVACIONES</p>
+  <p class="description-form">
+    Complete el siguiente formulario para realizar 
+    <br>
+    una reservación.
+    <br>
+    Por favor agregue todos los detalles requeridos.
+  </p>
+
+  <div class="form">
+    
+    <!-- Encabezado de la sección de contacto -->
+    <div class="contact-section">
+      <p class="subtitle">Detalles de Contacto</p>
+      <p class="message">Por favor complete sus datos para que podamos comunicarnos con usted.</p>
+    </div>
+
+    <!-- Campo: Tipo de reserva -->
+    <div class="flex">
+      <label>
+        <span>Tipo de Reserva</span>
+        <select class="input" formControlName="tipoReserva">
+          <option value="">Seleccione tipo de reserva</option>
+          <option value="habitacion">Habitación</option>
+          <option value="evento">Evento</option>
+        </select>
+        <small *ngIf="isInvalidField('tipoReserva')" class="error-message">{{ getErrorMessage('tipoReserva') }}</small>
       </label>
     </div>
 
-    <!-- Botón de envío -->
-    <div class="button-container">
-      <button type="submit" class="submit back-button" [disabled]="submitButtonDisabled">
-        Siguiente
-      </button>
+    <!-- Campo: Número de personas -->
+    <div class="flex">
+      <label for="numeroPersonas">Número de Personas</label>
+      <input type="number" class="input" formControlName="numeroPersonas"
+        (keypress)="allowOnlyNumbers($event)" min="1" placeholder="01" />
+      <small *ngIf="isInvalidField('numeroPersonas')" class="error-message">{{ getErrorMessage('numeroPersonas') }}</small>
     </div>
-  </form>
+
+    <!-- Campos: Fechas de Check In y Check Out -->
+    <div class="flex horizontal-dates">
+      <label class="date-label">
+        <span>Check In</span>
+        <input type="date" class="input date-input" formControlName="checkIn" />
+        <small *ngIf="isInvalidField('checkIn')" class="error-message">{{ getErrorMessage('checkIn') }}</small>
+      </label>
+      <label class="date-label">
+        <span>Check Out</span>
+        <input type="date" class="input date-input" formControlName="checkOut" />
+        <small *ngIf="isInvalidField('checkOut')" class="error-message">{{ getErrorMessage('checkOut') }}</small>
+      </label>
+    </div>
+
+    <!-- Campo: Comentarios adicionales -->
+    <div class="flex">
+      <label>
+        <span>Comentarios</span>
+        <textarea class="input" formControlName="comentarios" placeholder="Por favor mencione aquí"></textarea>
+      </label>
+    </div>
+  </div>
+
+  <!-- Botones de navegación del formulario -->
+  <div class="button-container">
+    <button type="button" class="submit-form" (click)="goToPreviousForm()">Anterior</button>
+    <button type="button" class="submit-form" (click)="onSubmit()">Reservar</button>
+  </div>
+</div>
+
+<!-- Tarjeta de confirmación de éxito -->
+<div class="card-form" *ngIf="showSuccessCard">
+  <!-- Botón para cerrar la tarjeta de éxito -->
+  <button class="dismiss" type="button" (click)="closeSuccessCard()">&#10006;</button>
+  <div class="header-form">
+    
+    <!-- Imagen decorativa -->
+    <div class="image">
+      <img src="https://img.icons8.com/?size=100&id=33824&format=png&color=000000" alt="Celebración" />
+    </div>
+
+    <!-- Mensaje de éxito -->
+    <div class="content-form">
+      <span class="title">¡Tu reserva ha sido realizada!</span>
+    </div>
+
+    <!-- Botón de agradecimiento -->
+    <div class="actions">
+      <button class="history" type="button" (click)="closeSuccessCard1()">Muchas gracias!</button>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,302 @@
+/* ==================== NAV ==================== */
+
+/* Ícono de reloj con animación y tooltip */
+.icon-clock {
+  position: absolute;
+  top: 35%;
+  left: 56%;
+  font-size: 28px;
+  color: #ffffff;
+  z-index: 40;
+  animation: fade-in 1.5s ease-in-out;
+  cursor: pointer;
+}
+
+/* Tooltip que aparece al pasar el mouse sobre el icono */
+.icon-clock .tooltip {
+  visibility: hidden;
+  width: 220px;
+  background-color: #33333336;
+  color: #ffffff !important;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 30;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 18px;
+  box-shadow: 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Mostrar el tooltip al hacer hover */
+.icon-clock:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  color: #ffffff !important;
+}
+/* Animación de aparición (fade in + escala) */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Estilos generales de la sección de inicio */
+.home {
+  position: relative;
+  background-image: url('/assets/Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Barra de navegación centrada horizontalmente */
+.nav-bar {
+  position: absolute;
+  top: 8px;
+  left: 25%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: flex;
+  gap: 3px;
+  z-index: 20;
+  flex-wrap: wrap;
+}
+/* Botones/enlaces del menú */
+.nav-item {
+  color: #fff;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Efecto hover sobre los enlaces */
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F6C712;
+}
+/* Separador visual entre elementos */
+.separator {
+  color: #1DA2DB;
+  font-size: 20px;
+}
+/* Decoración lateral con imagen */
+.decoration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+/* Rectángulo de fondo decorativo */
+.rectangle {
+  width: 480px;
+}
+/* Imagen decorativa dentro de la barra */
+.decoration-img {
+  width: 580px;
+  position: relative;
+  left: -3.4%;
+}
+
+/* Contenedor centrado para el logo y descripción */
+.overlay-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+}
+/* Logo principal */
+.logo-nav {
+  width: 430px;
+  margin-bottom: 20px;
+  position: relative;
+  left: 80px;
+}
+/* Descripción encima del botón de reservar */
+.description {
+  background-color: rgba(237, 0, 140, 0.7);
+  padding: 12px 70px;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  position: relative;
+  top: 0px;
+  left: -20px;
+}
+/* Botón de reservación destacado */
+.reserve-btn {
+  border: 3px solid #ffdb4d;
+  background-color: #ffffff44;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  margin-top: 5px;
+}
+/* Efecto hover para el botón */
+.reserve-btn:hover {
+  background-color: #ffdb4d;
+  color: #000;
+  border-color: #ffd700;
+}
+/* Botón del chatbot en la esquina inferior derecha */
+.bot {
+  width: 300px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Ajustes para pantallas medianas y móviles */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding-top: 3rem;
+  }
+
+  .logo-nav {
+    width: 280px;          /* Más pequeño que los 430px actuales */
+    left: 0;               /* Centrado */
+    margin-top: 60px;      /* Baja el logo */
+    position: relative;
+  }
+  
+
+  .description {
+    font-size: 16px;
+    padding: 10px 20px;
+    left: 0;
+  }
+
+  .reserve-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .rectangle {
+    width: 500px;
+    height: 1500px;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-direction: row; /* Asegura que se mantenga horizontal */
+    flex-wrap: nowrap;   /* Evita que los elementos se vayan a otra línea */
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    border-radius: 30px;
+    z-index: 20;
+    max-width: 100%;
+    overflow-x: auto; 
+
+  }
+  .nav-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .nav-item {
+    font-size: 12px;
+    padding: 8px 16px;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+  }
+
+  .bot {
+    position: static;
+    margin-top: 2rem;
+    width: 180px;
+  }
+
+  .icon-clock {
+    top: 260px;
+    left: calc(100% - 28px); 
+    transform: none;
+    font-size: 20px;
+    z-index: 50; 
+  }
+  
+  .icon-clock .tooltip {
+    width: 180px;
+    font-size: 12px;
+    bottom: 150%;
+  }
+  
+}
+
+
+@media (max-width: 400px) {
+  .logo-nav {
+    width: 240px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-nav {
+    width: 240px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .logo-nav {
+    width: 240px;
+    margin-top: 32px;
+  }
+}

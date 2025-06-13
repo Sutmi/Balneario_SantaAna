@@ -1,0 +1,465 @@
+/* ======================== PACKAGES SECTION ======================== */
+
+/* Contenedor principal de la sección de paquetes */
+.packages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  background: #fff;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+/* Contenido textual de la sección (título y descripción.) */
+.content {
+  max-width: 600px;
+  max-height: 200px;
+}
+/* Logo decorativo de la sección de paquetes */
+.logo-pack {
+  width: 160px;
+  margin-bottom: 20px;
+  position: relative;
+  top: -140px;
+  left: -50px;
+}
+/* Título principal de la sección */
+
+h2 .highlight {
+  font-size: 90px;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #d81287;
+  font-weight: bold 0.100%; /* Negrita */
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  top: -160px;
+  left: 55px; 
+}
+/* Etiqueta amarilla que acompaña al título */
+h2 .package-tag {
+  background-color: #f6c712; /* Color de fondo amarillo */
+  color: #020100; /* Color de texto negro */
+  font-weight: bold; /* Negrita */
+  font-size: 30px; /* Tamaño de fuente */
+  border-radius: 70px; /* Bordes redondeados */
+  padding: 30px 30px; /* Espaciado dentro del botón */
+  display: inline-block; /* Asegura que el texto se comporte como un bloque en línea */
+  text-align: center; /* Centra el texto */
+  position: relative;
+  top: -230px; /* Ajuste vertical */
+  left: 300px; /* Ajuste horizontal */
+}
+ /* Párrafo descriptivo debajo del título */
+p {
+  font-size: 30px;
+  margin-bottom: 24px;
+  color: #555;
+  position: relative;
+  top:-230px;
+  left: 60px;
+}
+
+/* Contenedor de la información detallada (iconos, textos, botón) */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+  position: relative;
+  top: -420px;
+  left: 730px;
+
+}
+
+/* Elemento individual dentro del bloque de información */
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+/* Etiqueta con icono y texto informativo */
+.info-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
+  
+}
+/* Icono dentro de la etiqueta informativa */
+.info-label i {
+  background-color: #f6c712;
+  border-radius: 50%;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 10px;
+  color: black;
+}
+/* Botón de acción llamativo dentro de la sección de información */
+.info-button {
+  background-color: #00b0ff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  
+}
+/* Efecto hover para el botón de información */
+.info-button:hover {
+  background-color: #0090cc;
+}
+/* Contenedor de las imágenes circulares decorativas */
+.images {
+  position: relative;
+  top: -50px;
+  left: 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 60px;
+  margin-top: 40px;
+}
+/* Caja que envuelve las imágenes redondas */
+.image-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* Imagen con forma circular y borde blanco */
+.circle-image {
+  border-radius: 50%;
+  border: 10px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Imagen circular principal de gran tamaño */
+.circle-image.large {
+  width: 350px;
+  height: 350px;
+}
+/* Imagen circular pequeña superpuesta sobre la imagen grande */
+.circle-image.small {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -90px;
+  left: -80px;
+  z-index: 2;
+}
+/* Etiqueta visual sobre la imagen */
+.image-label {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  background-color: #f6c712;
+  color: black;
+  font-weight: bold;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+/* Versión llamativa de la etiqueta con borde punteado y sombra */
+.image-label.sticker {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  background-color: #f6c712;
+  color: #000;
+  font-weight: bold;
+  padding: 16px 24px;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  border-radius: 60px 60px 60px 60px / 40px 40px 40px 40px;
+  border: 2px dashed #e29500;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  line-height: 1.2;
+  z-index: 2;
+  width: 180px;
+}
+/* Efecto visual decorativo simula una esquina doblada */
+.image-label.sticker::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at top right, #fff 0%, #d1d1d1 80%);
+  border-bottom-left-radius: 100%;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-15deg);
+  z-index: -1;
+}
+/* Imagen decorativa inferior izquierda */
+.decor-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+  z-index: 1;
+}
+/* Imagen decorativa superior derecha */
+.decor-right {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 250px;
+  height: auto;
+  z-index: 1;
+}
+/* Estilos responsivos para tablets o pantallas medianas */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 60px;
+    top: 0;
+    left: 0;
+    margin: 0 auto 20px;
+  }
+
+  h2 .package-tag {
+    font-size: 30px;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  .logo-pack {
+    top: 0;
+    left: 0;
+    margin: 20px auto;
+    display: block;
+  }
+
+  p {
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .info {
+    top: 0;
+    left: 0;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .images {
+    top: 0;
+    left: 0;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .circle-image.large {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-image.small {
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    left: -40px;
+  }
+
+  .image-label.sticker {
+    width: auto;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+
+  .packages {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  h2 .highlight {
+    position: static;
+    font-size: 40px;
+  color: #d81287;
+}
+
+  h2 .package-tag {
+    font-size: 20px;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    position: static;
+    margin: 10px auto;
+  }
+
+  p {
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    position: static;
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .logo-pack {
+    width: 150px;
+    position:relative;
+      top: 0px;
+  left: 0px;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    top: 0;
+    left: 0;
+    position: static;
+    margin: 20px 0;
+    align-items: center;
+  }
+
+
+
+.images {
+    position: relative;
+    margin: 30px auto 0 auto; /* Centrado horizontal y espacio arriba */
+    width: 220px;              /* Ajusta al tamaño que necesites */
+    height: 220px;             /* Altura igual a la grande */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-box {
+    position: relative;
+    width: 200px;              /* Tamaño de la imagen grande */
+    height: 200px;
+  }
+
+  /* Imagen grande */
+  .circle-image.large {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Imagen pequeña superpuesta */
+  .circle-image.small {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 20px;     /* Ajusta para mover verticalmente */
+    left: 20px;    /* Ajusta para mover horizontalmente */
+    border-radius: 50%;
+    border: 10px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+
+  /* Etiquetas (stickers) si tienes */
+  .image-label.sticker {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    background-color: #f6c712;
+    color: #000;
+    font-weight: bold;
+    padding: 16px 24px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Arial Black', sans-serif;
+    border-radius: 60px;
+    border: 2px dashed #e29500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    line-height: 1.2;
+    width: 180px;
+    z-index: 3;
+  }
+
+.decor-left {
+  position: absolute;
+  bottom: 0;
+  left: 100;
+  width: 100px;
+  height: auto;
+  z-index: 1;
+}
+
+.decor-right {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 150px;
+  height: auto;
+  z-index: 1;
+}
+
+.content {
+  max-width: 100%;
+  max-height: none;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static;
+}
+
+.info {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.info-item {
+  width: 100%;
+  align-items: center;
+}
+
+.info-button {
+  width: auto;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.image-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-image.small {
+  position: static;
+  margin-bottom: 10px;
+}
+
+
+}
+

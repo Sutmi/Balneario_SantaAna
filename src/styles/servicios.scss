@@ -1,0 +1,189 @@
+/* ==================== SERVICIOS ==================== */
+
+/* Sección principal de servicios con fondo combinado (imagen + color semitransparente) */
+                      .services {
+                        background: url('/assets/2-5.png') center/cover no-repeat;
+                        background-color: rgba(9, 60, 102, 0.10);
+                        background-position: center;
+                        background-repeat: no-repeat; 
+                        width: 100%;
+                        height: 120vh;
+                        color: white;
+                        overflow: hidden; 
+                        position: relative;
+                    }
+                    /* Capa superior decorativa sobre la sección de servicios */
+                    .services::before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: url('/assets/capa.png') center/cover no-repeat;
+                      z-index: 1;
+                      opacity: 1; 
+                    }
+                    /* Garantiza que el título y lista de servicios estén sobre la capa decorativa */
+                    .services-title,
+                    .service-list {
+                    position: relative;
+                    z-index: 2;
+                    }
+                    /* Título visual llamativo con fondo rosa*/
+                    .services-title {
+                        background-color: rgba(237, 0, 140, .70);
+                        position: relative;
+                        top: 50px;
+                        left: -20px;
+                        color:#fff;
+                        display: inline-block;
+                        padding: 20px 40px 20px 80px;
+                        border-radius: 0px 40px 40px 0px; 
+                        font-size: 30px;
+                        font-weight: bold;
+                        margin-bottom: 60px;
+                        text-transform: uppercase;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                    }
+                    
+                    /* Lista de servicios en formato horizontal con espacio entre ellos */
+                    .service-list {
+                        display: flex;
+                        justify-content: center;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                    }
+                    /* Contenedor de cada servicio individual */
+                    .service {
+                        width: 320px;
+                        text-align: center;
+                        position: relative;
+                        top: 100px;
+                    }
+                    /* Icono circular de cada servicio */
+                    .service-icon {
+                        width: 100px;
+                        height: 100px;
+                        background: white;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 auto 20px;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                    }
+                    /* Ícono dentro del círculo con color rosa fuerte */
+                    .service-icon i {
+                        font-size: 60px;
+                        color: #ed008c;
+                    }
+                    /* Título del servicio */
+                    .service h3 {
+                        font-size: 28px;
+                        font-weight: bold;
+                        margin-bottom: 0px;
+                    }
+                    /* Descripción del servicio */
+                    .service p {
+                        font-size: 23px;
+                        text-align: justify;
+                        color: white;
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                    }
+                    /* ==================== RESPONSIVE ==================== */
+                    @media (max-width: 768px) {
+
+                        .service-list {
+                            flex-direction: column;
+                            gap: 30px;
+                        }
+                    
+                        .services {
+                            height: auto;
+                            padding-bottom: 50px;
+                          }
+
+                        .service {
+                            width: 100%;
+                            top:0;
+                            padding: 0 16px;
+                            box-sizing: border-box;
+                        }
+                    
+                        .service-icon {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    
+                        .service-icon i {
+                            font-size: 42px;
+                        }
+                    
+                        .services-title {
+                            font-size: 26px;
+                            padding: 16px 32px;
+                        }
+                    
+                        .service h3 {
+                            font-size: 22px;
+                        }
+                    
+                        .service p {
+                            font-size: 16px;
+                            text-align: justify;
+                            padding: 0;
+                            margin: 0;
+                            word-break: break-word;
+                          }
+                    }
+
+                    @media (max-width: 1200px) {
+
+                        .service-list {
+                            flex-direction: column;
+                            gap: 30px;
+                        }
+                    
+                        .services {
+                            height: auto;
+                            padding-bottom: 50px;
+                          }
+
+                        .service {
+                            width: 100%;
+                            top:0;
+                            padding: 0 16px;
+                            box-sizing: border-box;
+                        }
+                    
+                        .service-icon {
+                            width: 100px;
+                            height: 100px;
+                        }
+                    
+                        .service-icon i {
+                            font-size: 42px;
+                        }
+                    
+                        .services-title {
+                            font-size: 26px;
+                            padding: 16px 32px;
+                        }
+                    
+                        .service h3 {
+                            font-size: 22px;
+                        }
+                    
+                        .service p {
+                            font-size: 16px;
+                            text-align: justify;
+                            padding: 0;
+                            margin: 0;
+                            word-break: break-word;
+                          }
+                    }
+                    
+                      

@@ -1,0 +1,179 @@
+                    
+/* ==================== UBICACIÓN ==================== */
+/* Sección que muestra la ubicación del balneario junto a un mapa y una breve descripción. */
+                    .location {
+                        position: relative;
+                        background-image: url('/assets/2-5.png');
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: 120vh;
+                        color: white;
+                       
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                      /* Capa translúcida encima del fondo para mejorar el contraste del contenido */
+                      .overlay {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background-color: rgba(255, 255, 255, 0.3);
+                      z-index: 1;
+                  }
+                  /* Contenedor principal del contenido de ubicación */
+                    .location-content {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 60px;
+                        max-width: 1200px;
+                        width: 100%;
+                        margin: 0 auto;
+                        padding: 20px;
+                        z-index: 2;
+                    }
+                    /* Contenedor del texto a la izquierda */
+                    .location-text {
+                      flex: 1;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    }
+                    /* Título de la sección */
+                    .location-title {
+                        background-color: #ffffff;
+                        color: #ffcc00;
+                        padding: 8px 40px;
+                        border-radius: 30px;
+                        font-size: 40px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: 12px;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                        text-align: center;
+                        margin-bottom: 30px;
+                        position: relative;
+                        top: -60px;
+                        left: 0px;
+                        z-index: 2;
+                        align-self: center;
+                    }
+                    
+                      /* Descripción que acompaña al mapa */
+                    .location-description {
+                        font-size: 34px;
+                        background: rgba(255, 255, 255, 0.35);
+                        padding: 20px;
+                        border-radius: 12px;
+                        color: #ffffff;
+                        line-height: 1.6;
+                        text-align: justify;
+                        max-width: 1000px;
+                        margin: 0 auto;
+                        justify-content: center;
+                        top: 0px;
+                        left: 0px;
+                        max-width: 500px;   /* Más angosto → más cuadrado */
+                        height: 450px;      /* Altura definida → más cuadrado */
+                    }
+                    /* Contenedor del mapa */
+                    .map {
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                    }
+                    
+                    /* Mapa embebido de Google Maps */
+                    .map iframe {
+                      max-width: 500px;   /* Más angosto → más cuadrado */
+                      height: 500px;      /* Altura definida → más cuadrado */
+                        border-radius: 12px;
+                        border: none;
+                    }
+
+                    
+/* ==================== RESPONSIVE ==================== */
+                    @media (max-width: 1024px) {
+                        .location-title {
+                          font-size: 28px;
+                          padding: 6px 24px;
+                          top: -30px;
+                        }
+                      
+                        .location-description {
+                          font-size: 22px;
+                          max-width: 90%;
+                          height: auto;
+                          text-align: center;
+                          padding: 20px;
+                        }
+                      
+                        .map iframe {
+                          max-width: 100%;
+                          height: 350px;
+                        }
+                      }
+
+                      @media (max-width: 600px) {
+                        .location {
+                          height: auto;
+                          padding: 40px 10px;
+                        }
+                      
+                        .location-content {
+                          flex-direction: row;
+                          flex-wrap: wrap;
+                          justify-content: center;
+                          gap: 20px; /* Espacio visual entre texto y mapa */
+                          padding: 10px;
+                        }
+                      
+                        .location-description {
+                          font-size: 15px;
+                          padding: 15px;
+                          width: 60%;              
+                          height: 280px;       
+                          text-align: justify;
+                          background: rgba(255, 255, 255, 0.35);
+                          border-radius: 12px;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          line-height: 1.5;
+                        }
+                      
+                        .map {
+                          width: 48%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
+                      
+                        .map iframe {
+                          width: 100%;
+                          height: 280px;           /*Igual altura que el texto */
+                          border-radius: 12px;
+                          box-shadow: 0 0 8px rgba(0,0,0,0.2);
+                        }
+                      
+                        .location-title {
+                          font-size: 20px;
+                          padding: 10px 20px;
+                          top: 20px;
+                          letter-spacing: 8px;
+                          margin-bottom: 20px;
+                          text-transform: uppercase; 
+                        }
+                      }
+                      
+                      
+                      
+                      

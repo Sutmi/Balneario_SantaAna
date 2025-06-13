@@ -1,0 +1,318 @@
+/* Contenedor principal del chatbot */
+.chatbot-panel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9998; /* Asegura que el chatbot esté detrás del ícono del bot */
+    border: 3px solid #f0f0f0;
+}
+
+/* Encabezado del chat */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 2px solid #f0f0f0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+}
+
+/* Botón de cerrar (esquina superior derecha) */
+.close-btn {
+    position: relative; /* Asegura que se posicione en relación a su contenedor */
+    top: 10px; /* Ajuste para el espacio desde el borde superior */
+    right: 10px; /* Lo coloca en el lado derecho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 20px; /* Tamaño inicial del botón */
+    height: 20px; /* Tamaño inicial del botón */
+    color: transparent; /* Color de texto invisible */
+    font-size: 0; /* Sin texto visible */
+    cursor: pointer;
+    background-color: #ff000080; /* Fondo rojo con opacidad */
+    border: none;
+    border-radius: 50%; /* Hace el botón circular */
+    transition: .2s ease all; /* Transición suave */
+    z-index: 9999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+/* Estilos cuando el mouse pasa sobre el botón cerrar */
+.close-btn:hover {
+    width: 25px; /* Aumenta el tamaño al pasar el mouse */
+    height: 25px; /* Aumenta el tamaño al pasar el mouse */
+    font-size: 0.5rem; /* Tamaño del texto al hacer hover */
+    color: #ffffff; /* Cambia el color del texto a blanco */
+    background-color: #ff0000cc; /* Fondo rojo más fuerte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra al botón */
+}
+/* Estilos cuando se hace clic en el botón cerrar */
+.close-btn:active {
+    width: 25px; /* Tamaño del botón cuando se presiona */
+    height: 25px; /* Tamaño del botón cuando se presiona */
+    font-size: 1.2rem; /* Tamaño del texto cuando se presiona */
+    color: #ffffffde; /* Color blanco con opacidad */
+    box-shadow: 0 3px 3px 0 #00000026; /* Sombra al presionar el botón */
+}
+/*  Ícono del bot */
+.bot-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #F6C712;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+/* Cuerpo del chat (donde se muestran los mensajes) */
+.chat-body {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+/* Fila de cada mensaje */
+.message-row {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+/* Ícono del bot al lado de sus mensajes */
+.message-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #F6C712;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+/* Burbuja del mensaje */
+.message-bubble {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+/* Alineación y estilo de mensajes del bot */
+.bot-message {
+    flex-direction: row;
+}
+
+/* Alineación y estilo de mensajes del usuario */
+.user-message {
+    flex-direction: row-reverse;
+}
+/* Estilo visual del mensaje del bot */
+.bot-bubble {
+    background-color: #F6C712; /* Amarillo */
+    color: black;
+    border-bottom-left-radius: 0;
+}
+
+/* Estilo visual del mensaje del usuario */
+.user-bubble {
+    background-color: #ED008C; /* Rosa */
+    color: white;
+    border-bottom-right-radius: 0;
+}
+/* Pie del chat (input + botón micrófono) */
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+/* Campo de entrada de texto */
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #e0e0e0;
+}
+/* Botón para grabar o enviar */
+.send-btn {
+    margin-left: 10px;
+    background-color: #1da2db; /* Azul claro */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Micrófono animado cuando está grabando */
+.send-btn i {
+    font-size: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  .send-btn i.recording {
+    color: red;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  /*Contenedor para los videos recomendados */
+.video-message-bubble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #F6C712;
+    border-radius: 10px;
+  }
+  /* Tarjeta individual de video TikTok */
+  .video-card {
+    width: 140px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  /* Iframe del video */
+  .video-card iframe {
+    width: 140px;
+    height: 140px; /* cuadrado */
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+  }
+
+  /* Enlace para ver video en TikTok */
+  .video-card a {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-size: 0.85rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .video-card a:hover {
+    text-decoration: underline;
+  }
+/* Indicador de carga */
+  .loader-loading {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    animation: spin 1s linear infinite;
+    stroke: rgba(107, 114, 128, 1);
+  }
+  
+  .loading-text {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: rgba(107, 114, 128, 1);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+/* Estilos responsive para móviles */
+  @media (max-width: 480px) {
+    .chatbot-panel {
+      position: relative;
+      width: 90vw;         /* Usa 90% del ancho de la pantalla */
+      height: 420px;        /* Más corto para no cubrir todo */
+      right: 0;          /*Centrado visualmente */
+      bottom: 10px;
+      border-radius: 16px;
+      z-index: 9998;
+      max-width: 90vw;            /* nunca se pase del ancho del móvil */
+      max-height:  90vw;            /* nunca se pase del ancho del móvil */
+    }
+  
+    .chat-body {
+      padding: 8px;
+    }
+  
+    .chat-input {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .send-btn i {
+      font-size: 20px;
+    }
+  
+    .chat-header {
+      position: relative;
+      padding: 8px;
+    }
+  
+    .video-card {
+      width: 120px;
+    }
+  
+    .video-card iframe {
+      width: 120px;
+      height: 120px;
+    }
+
+.close-btn {
+    position: relative; /* Asegura que se posicione en relación a su contenedor */
+    top: 1px; /* Ajuste para el espacio desde el borde superior */
+    right: 400px; /* Lo coloca en el lado derecho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 20px; /* Tamaño inicial del botón */
+    height: 20px; /* Tamaño inicial del botón */
+    color: transparent; /* Color de texto invisible */
+    font-size: 0; /* Sin texto visible */
+    cursor: pointer;
+    background-color: #ff000080; /* Fondo rojo con opacidad */
+    border: none;
+    border-radius: 50%; /* Hace el botón circular */
+    transition: .2s ease all; /* Transición suave */
+    z-index: 9999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+
+.close-btn:hover {
+    width: 25px; /* Aumenta el tamaño al pasar el mouse */
+    height: 25px; /* Aumenta el tamaño al pasar el mouse */
+    font-size: 0.5rem; /* Tamaño del texto al hacer hover */
+    color: #ffffff; /* Cambia el color del texto a blanco */
+    background-color: #ff0000cc; /* Fondo rojo más fuerte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra al botón */
+}
+
+.close-btn:active {
+    width: 25px; /* Tamaño del botón cuando se presiona */
+    height: 25px; /* Tamaño del botón cuando se presiona */
+    font-size: 1.2rem; /* Tamaño del texto cuando se presiona */
+    color: #ffffffde; /* Color blanco con opacidad */
+    box-shadow: 0 3px 3px 0 #00000026; /* Sombra al presionar el botón */
+}
+  }
+  

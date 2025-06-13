@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ChatbotComponent } from './chatbot.component';
 
 describe('ChatbotComponent', () => {
@@ -8,7 +7,7 @@ describe('ChatbotComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChatbotComponent]
+      imports: [ChatbotComponent]
     })
     .compileComponents();
 
@@ -18,6 +17,8 @@ describe('ChatbotComponent', () => {
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(ChatbotComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

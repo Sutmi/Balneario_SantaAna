@@ -1,0 +1,28 @@
+/* Este archivo contiene los estilos globales de la aplicación Angular. 
+   Aquí puedes definir reglas que se apliquen en todo el sitio y también importar archivos SCSS específicos por sección. */
+
+/* ==================== VARIABLES ==================== */
+/* Importa el archivo que contiene todas las variables CSS personalizadas 
+   como colores, tamaños de fuente, breakpoints, etc. */
+@import 'variables';
+/* ==================== NAVBAR ==================== */
+/* Estilos dedicados a la barra de navegación del sitio (header superior). */
+@import 'navbar';
+/* ==================== FOOTER ==================== */
+/* Estilos para el pie de página, donde suelen estar redes sociales, derechos de autor, etc. */
+@import 'footer';
+/* ==================== GALERÍA ==================== */
+/* Contiene los estilos para la sección de galería de imágenes con slider automático. */
+@import 'gallery';
+/* ==================== SERVICIOS ==================== */
+/* Estilos para la sección de servicios que ofrece el balneario, incluyendo íconos y descripciones. */
+@import 'servicios';
+/* ==================== PAQUETES ==================== */
+/* Estilos para mostrar los paquetes o promociones disponibles. */
+@import 'paquetes';
+/* ==================== UBICACIÓN ==================== */
+/* Estilos para la sección que incluye el mapa de Google y la dirección del lugar. */
+@import 'ubicacion';
+/* ==================== FORMULARIO ==================== */
+/* Estilos para el formulario de contacto o reservación (inputs, botones, validaciones visuales). */
+@import 'formulario';

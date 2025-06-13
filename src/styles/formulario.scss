@@ -1,0 +1,580 @@
+/* ===================== ESTILOS DEL FORMULARIO ===================== */
+
+/* Contenedor principal del formulario */
+.container-form {
+  background: linear-gradient(to bottom, #FFFFFF, #8BC7E1);
+  padding: 20px 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 70%;
+  max-width: 650px;        /* Más compacto */
+  min-height: auto;        /* Se adapta al contenido */
+  margin: 40px auto; /* Centrado con margen, no posición fija */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+/* Contenedor del contenido interno del formulario */
+.form {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Botón para cerrar el formulario */
+.close-btn {
+  position: relative; /* Asegura que se posicione en relación a su contenedor */
+  left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20px; /* Tamaño inicial del botón */
+  height: 20px; /* Tamaño inicial del botón */
+  color: transparent; /* Color de texto invisible */
+  font-size: 0; /* Sin texto visible */
+  cursor: pointer;
+  background-color: #ff000080; /* Fondo rojo con opacidad */
+  border: none;
+  border-radius: 50%; /* Hace el botón circular */
+  transition: .2s ease all; /* Transición suave */
+  z-index: 9999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.close-btn:hover {
+  width: 25px; /* Aumenta el tamaño al pasar el mouse */
+  height: 25px; /* Aumenta el tamaño al pasar el mouse */
+  font-size: 0.5rem; /* Tamaño del texto al hacer hover */
+  color: #ffffff; /* Cambia el color del texto a blanco */
+  background-color: #ff0000cc; /* Fondo rojo más fuerte */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra al botón */
+}
+
+.close-btn:active {
+  width: 45px; /* Tamaño del botón cuando se presiona */
+  height: 45px; /* Tamaño del botón cuando se presiona */
+  font-size: 1.2rem; /* Tamaño del texto cuando se presiona */
+  color: #ffffffde; /* Color blanco con opacidad */
+  box-shadow: 0 3px 3px 0 #00000026; /* Sombra al presionar el botón */
+}
+
+/* Título principal */
+.title-form {
+  position: relative;
+  top: -15px;
+  left: 10px;
+  font-size: 40px;
+  color: #170F49;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Descripción introductoria del formulario */
+.description-form {
+  font-size: 20px;
+  color: #6F6C90;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+  line-height: 1.6; /* Mejora la legibilidad al dar más espacio entre líneas */
+  position: relative;
+  left: 0;
+  top: -10px;
+}
+
+/* Sección de contacto (subtítulo + mensaje) */
+.contact-section {
+  margin-bottom: 15px;
+  padding-bottom: 0px;
+  position: relative;
+  top: 200px;
+  left: -40px;
+}
+
+.contact-section .subtitle {
+  font-size: 22px;
+  color: #170F49;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-section .message {
+  font-size: 16px;
+  color: #6F6C90;
+  margin-bottom: 10px;
+  position: relative;
+  left: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DADADA; /* ✅ Esta línea es la clave */
+  width: 100%;
+}
+
+/* Estilos para campos de entrada */
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 15px;
+  align-items: flex-start; /* Asegura alineación */
+}
+
+label {
+  display: inline-block;
+  margin-top: 5%;;
+}
+
+span {
+  display: block;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  max-width: 300px;
+  padding: 20px 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  background-color: #FFFFFF;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.input::placeholder {
+  color: #9E9E9E;
+  opacity: 1;
+}
+
+.input:focus {
+  border-color: #9E96F2;
+  box-shadow: 0px 0px 0px 3px rgba(158, 150, 242, 0.2);
+}
+
+/* Estilo para mensajes de error */
+.error-message {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.input.ng-touched.ng-invalid {
+  border-color: #e53935;
+}
+
+
+/* Botones */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Botón fuera del formulario */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  
+}
+
+/* Botón principal */
+.submit-form {
+  background: linear-gradient(to right, #9E96F2, #EC31F0);
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-form:hover:enabled {
+  transform: scale(1.02);
+  background: linear-gradient(to right, #a79ef3, #f04cf2);
+}
+
+
+/* Tarjeta flotante de confirmación de envío */
+.card-form {
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación para mostrar tarjeta */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Botón de cerrar tarjeta */
+.card-form .dismiss {
+  position: absolute; /* Asegura que se posicione en relación a su contenedor */
+  top: 10px; /* Ajuste para el espacio desde el borde superior */
+  right: 10px; /* Lo coloca en el lado derecho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20px; /* Tamaño inicial del botón */
+  height: 20px; /* Tamaño inicial del botón */
+  color: transparent; /* Color de texto invisible */
+  font-size: 0; /* Sin texto visible */
+  cursor: pointer;
+  background-color: #ff000080; /* Fondo rojo con opacidad */
+  border: none;
+  border-radius: 50%; /* Hace el botón circular */
+  transition: .2s ease all; /* Transición suave */
+  z-index: 9999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.card-form .dismiss:hover {
+  width: 25px; /* Aumenta el tamaño al pasar el mouse */
+  height: 25px; /* Aumenta el tamaño al pasar el mouse */
+  font-size: 0.5rem; /* Tamaño del texto al hacer hover */
+  color: #ffffff; /* Cambia el color del texto a blanco */
+  background-color: #ff0000cc; /* Fondo rojo más fuerte */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra al botón */
+}
+
+.card-form .dismiss:active {
+  width: 45px; /* Tamaño del botón cuando se presiona */
+  height: 45px; /* Tamaño del botón cuando se presiona */
+  font-size: 1.2rem; /* Tamaño del texto cuando se presiona */
+  color: #ffffffde; /* Color blanco con opacidad */
+  box-shadow: 0 3px 3px 0 #00000026; /* Sombra al presionar el botón */
+}
+
+/* Contenido de la tarjeta */
+.header-form {
+  padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.image {
+  display: flex;
+  margin: 0 auto;
+  background-color: #fcebd3;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  animation: animate .6s linear alternate-reverse infinite;
+}
+
+.image img {
+  width: 60%;
+  height: auto;
+}
+
+.content-form {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.card-form .title {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.history {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.history:hover {
+  background-color: #444;
+}
+
+/* Estilo horizontal para inputs de fecha */
+.horizontal-dates {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Estilo específico para los labels de fecha */
+.date-label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input más grande y redondeado */
+.date-input {
+  width: 100%;
+  padding: 18px 5px;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  color: #6F6C90;
+  font-size: 16px;
+  box-shadow: 0 0 0 1px #E0E0E0 inset, 0 4px 8px rgba(0,0,0,0.05);
+  appearance: none; /* Remueve estilo nativo */
+  position: relative;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(25%) sepia(7%) saturate(300%) hue-rotate(200deg) brightness(90%);
+}
+
+/* Animación suave */
+@keyframes animate {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto; /* 🔥 esto activa el scroll vertical */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ===================== MEDIA QUERIES ===================== */
+@media (max-width: 600px) {
+  .container-form {
+    width: 95%;
+    padding: 15px 10px;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .title-form {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  .description-form {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    top: 0;
+    left: 0;
+  }
+
+  .subtitle{
+   text-align: right;
+  
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .input,
+  .date-input {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .flex {
+    gap: 16px;
+  }
+
+  .submit-form {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
+    padding-left: 0;
+  }
+
+  .contact-section .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contact-section .message {
+    font-size: 13px;
+    left: 0;
+    text-align: center;
+  }
+
+  .horizontal-dates {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-form {
+    padding: 12px;
+  }
+
+  .card-form .title {
+    font-size: 1rem;
+  }
+
+  .close-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    position: relative;
+    left: 200px;
+
+  }
+
+  .history {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .container-form {
+    width: 95%;
+    padding: 15px 10px;
+    margin: 20px auto;
+    position: relative;
+  }
+
+  .title-form {
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  .description-form {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    top: 0;
+    left: 0;
+  }
+
+  .subtitle{
+   text-align: right;
+  
+  }
+
+  .form {
+    padding: 15px;
+  }
+
+  .input,
+  .date-input {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .flex {
+    gap: 16px;
+  }
+
+  .submit-form {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .contact-section {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 15px;
+    padding-left: 0;
+  }
+
+  .contact-section .subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contact-section .message {
+    font-size: 13px;
+    left: 0;
+    text-align: center;
+  }
+
+  .horizontal-dates {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-form {
+    padding: 12px;
+  }
+
+  .card-form .title {
+    font-size: 1rem;
+  }
+
+  .close-btn {
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    position: relative;
+
+  }
+
+  .history {
+    font-size: 0.85rem;
+  }
+
+  .button-wrapper,
+  .button-container {
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: transparent;
+  }
+
+  .submit-form {
+    width: 90%;
+    max-width: 300px;
+    font-size: 16px;
+  }
+
+
+}
+
+
